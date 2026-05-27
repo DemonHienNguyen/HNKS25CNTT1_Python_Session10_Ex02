@@ -116,11 +116,11 @@ while True:
                         case 2 :
                             while True:
                                 try:
-                                    index_wanna_insert = int(input(f"Vui lòng nhập vị trí từ (1 -> {len(disk_items)}): "))
+                                    index_wanna_insert = int(input(f"Vui lòng nhập vị trí từ (0 -> {(len(disk_items))-1}): "))
                                 except:
                                     print("Giá trị không khớp với dữ liệu")
                                     continue
-                                if(index_wanna_insert < 1 or index_wanna_insert > len(disk_items)):
+                                if(index_wanna_insert < 0 or index_wanna_insert > len(disk_items)-1):
                                     print("Vị trí chèn không hợp lệ !")
                                     continue 
                                 break 
@@ -130,7 +130,7 @@ while True:
                                     print("Tên bài hát không được để trống !")
                                     continue 
                                 break
-                            disk_items.insert(index_wanna_insert -1, new_song)
+                            disk_items.insert(index_wanna_insert, new_song)
                             print(f"Thêm bài hát {new_song} thành công !")
                         case 3:
                             break
@@ -202,7 +202,7 @@ while True:
                                     continue 
                                 break 
                             current_song = disk_items.pop(index_wanna_delete -1)
-                            print(f"Thêm bài hát {current_song} thành công !")
+                            print(f"xóa bài hát {current_song} thành công !")
                         case 3:
                             break
                         case _:
